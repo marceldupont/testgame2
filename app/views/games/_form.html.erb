@@ -1,0 +1,17 @@
+<%= form_for(@game) do |f| %>
+	<div>
+		<%= f.label :when %>
+		<%= f.text_field :when %>
+	</div>
+	<div>
+		<%= f.label :away_team_id %>
+		<%= f.collection_select(:away_team_id, Team.all, :id, :name, prompt: true) %>
+	</div>
+	<div>
+		<%= f.label :home_team_id %>
+		<%= f.collection_select(:home_team_id, Team.all, :id, :to_s, prompt: true) %>
+	</div>
+	<div>
+		<%= f.submit @game.new_record? ? "Create" : "Update"  %>
+	</div>
+<% end %>

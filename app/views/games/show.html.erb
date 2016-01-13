@@ -1,0 +1,16 @@
+<h1>Game</h1>
+<p>
+  <strong>When:</strong>
+  <%= @game.when.strftime("%d %b %Y") %>
+</p>
+<p>
+  <strong>away team:</strong>
+  <%= @game.away_team %>
+</p>
+<p>
+  <strong>Home team:</strong>
+  <%= @game.home_team %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>
